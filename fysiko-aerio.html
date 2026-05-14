@@ -54,58 +54,48 @@
           </ul>
         </article>
 
-        <article class="card form-card">
-          <h2>Φόρμα εκδήλωσης ενδιαφέροντος</h2>
-          <form class="interest-form" action="#" method="post">
-            <label for="fullname">Ονοματεπώνυμο</label>
-            <input id="fullname" name="fullname" type="text" required />
+       <form class="interest-form" action="https://formspree.io/f/mdabrarn" method="post">
+  <label for="fullname">Ονοματεπώνυμο</label>
+  <input id="fullname" name="fullname" type="text" required />
 
-             <label for="area">Τηλέφωνο</label>
-            <input id="area" name="area" type="text" required />
+  <label for="phone">Τηλέφωνο</label>
+  <input id="phone" name="phone" type="tel" required />
 
-            <label for="area">Περιοχή</label>
-            <input id="area" name="area" type="text"  />
+  <label for="area">Περιοχή</label>
+  <input id="area" name="area" type="text" />
 
-            <label for="area">Email</label>
-            <input id="area" name="area" type="text" required />
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email" required />
 
-            <label for="housing-type">Τύπος κατοικίας</label>
-            <select id="housing-type" name="housing_type" required>
-              <option value="" selected disabled>Επιλέξτε τύπο κατοικίας</option>
-              <option value="διαμέρισμα">Διαμέρισμα</option>
-              <option value="μονοκατοικία">Μονοκατοικία</option>
-              <option value="μεζονέτα">Μεζονέτα</option>
-              <option value="μεζονέτα">Κεντρική Θέρμανση</option>
-              <option value="επαγγελματικός χώρος">Επαγγελματικός χώρος</option>
-              <option value="μεζονέτα">Άλλο</option>
-            </select>
+  <label for="housing-type">Τύπος κατοικίας</label>
+  <select id="housing-type" name="housing_type" required>
+    <option value="" selected disabled>Επιλέξτε τύπο κατοικίας</option>
+    <option value="διαμέρισμα">Διαμέρισμα</option>
+    <option value="μονοκατοικία">Μονοκατοικία</option>
+    <option value="μεζονέτα">Μεζονέτα</option>
+    <option value="κεντρική θέρμανση">Κεντρική Θέρμανση</option>
+    <option value="επαγγελματικός χώρος">Επαγγελματικός χώρος</option>
+    <option value="άλλο">Άλλο</option>
+  </select>
 
-            <fieldset>
-              <legend>Χρήσεις φυσικού αερίου</legend>
-              <label class="check"><input type="checkbox" name="uses" value="ζεστό νερό χρήσης" /> Ζεστό νερό χρήσης</label>
-              <label class="check"><input type="checkbox" name="uses" value="μαγειρική εστία" /> Μαγειρική εστία</label>
-              <label class="check"><input type="checkbox" name="uses" value="θέρμανση" /> Θέρμανση</label>
-            </fieldset>
+  <fieldset>
+    <legend>Χρήσεις φυσικού αερίου</legend>
+    <label class="check">
+      <input type="checkbox" name="uses[]" value="ζεστό νερό χρήσης" />
+      Ζεστό νερό χρήσης
+    </label>
+    <label class="check">
+      <input type="checkbox" name="uses[]" value="μαγειρική εστία" />
+      Μαγειρική εστία
+    </label>
+    <label class="check">
+      <input type="checkbox" name="uses[]" value="θέρμανση" />
+      Θέρμανση
+    </label>
+  </fieldset>
 
-            <label for="area">Σημειώσεις</label>
-            <input id="area" name="area" type="text"  />
+  <label for="notes">Σημειώσεις</label>
+  <textarea id="notes" name="notes" rows="4"></textarea>
 
-            <button class="btn btn-primary" type="submit">Αποστολή ενδιαφέροντος</button>
-          </form>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-wrap">
-      <p>© <span id="year"></span> GZ Engineering · Γρηγόρης Ζολώτας</p>
-      <a href="epikoinonia.html">Επικοινωνία</a>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+  <button class="btn btn-primary" type="submit">Αποστολή ενδιαφέροντος</button>
+</form>
