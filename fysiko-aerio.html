@@ -56,22 +56,17 @@
 
         <article class="card form-card">
           <h2>Φόρμα εκδήλωσης ενδιαφέροντος</h2>
-          <p class="form-note">Συμπληρώστε τα στοιχεία σας και θα επικοινωνήσουμε μαζί σας το συντομότερο.</p>
-          <form class="interest-form interest-form--single" action="https://formspree.io/f/mdabrarn" method="post">
-            
-            <input type="hidden" name="_subject" value="Νέα εκδήλωση ενδιαφέροντος - Μελέτη Φυσικού Αερίου" />
-            <input type="hidden" name="_language" value="el" />
-            <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" />
+          <form class="interest-form" action="#" method="post">
             <label for="fullname">Ονοματεπώνυμο</label>
             <input id="fullname" name="fullname" type="text" required />
 
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required />
-
-            <label for="phone">Τηλέφωνο</label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel" />
+             <label for="area">Τηλέφωνο</label>
+            <input id="area" name="area" type="text" required />
 
             <label for="area">Περιοχή</label>
+            <input id="area" name="area" type="text"  />
+
+            <label for="area">Email</label>
             <input id="area" name="area" type="text" required />
 
             <label for="housing-type">Τύπος κατοικίας</label>
@@ -80,17 +75,20 @@
               <option value="διαμέρισμα">Διαμέρισμα</option>
               <option value="μονοκατοικία">Μονοκατοικία</option>
               <option value="μεζονέτα">Μεζονέτα</option>
+              <option value="μεζονέτα">Κεντρική Θέρμανση</option>
               <option value="επαγγελματικός χώρος">Επαγγελματικός χώρος</option>
+              <option value="μεζονέτα">Άλλο</option>
             </select>
 
             <fieldset>
               <legend>Χρήσεις φυσικού αερίου</legend>
-              <div class="checks-stack">
-                <label class="check-pill"><input type="checkbox" name="uses[]" value="ζεστό νερό χρήσης" /> Ζεστό νερό χρήσης</label>
-                <label class="check-pill"><input type="checkbox" name="uses[]" value="μαγειρική εστία" /> Μαγειρική εστία</label>
-                <label class="check-pill"><input type="checkbox" name="uses[]" value="θέρμανση" /> Θέρμανση</label>
-              </div>
+              <label class="check"><input type="checkbox" name="uses" value="ζεστό νερό χρήσης" /> Ζεστό νερό χρήσης</label>
+              <label class="check"><input type="checkbox" name="uses" value="μαγειρική εστία" /> Μαγειρική εστία</label>
+              <label class="check"><input type="checkbox" name="uses" value="θέρμανση" /> Θέρμανση</label>
             </fieldset>
+
+            <label for="area">Σημειώσεις</label>
+            <input id="area" name="area" type="text"  />
 
             <button class="btn btn-primary" type="submit">Αποστολή ενδιαφέροντος</button>
           </form>
