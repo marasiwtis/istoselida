@@ -72,7 +72,7 @@ h1 { font-size: clamp(2rem, 6vw, 3.6rem); line-height: 1.1; margin: .5rem 0 1rem
 
 .split { display: grid; gap: 1rem; grid-template-columns: 1fr; }
 .form-card h2 { margin-bottom: .8rem; }
-.interest-form { display: grid; gap: .55rem; }
+.interest-form { display: grid; gap: .7rem; }
 .interest-form label, .interest-form legend { font-weight: 700; }
 .interest-form input, .interest-form select {
   width: 100%; padding: .7rem .75rem; border-radius: .65rem; border: 1px solid var(--line); font: inherit;
@@ -84,55 +84,3 @@ h1 { font-size: clamp(2rem, 6vw, 3.6rem); line-height: 1.1; margin: .5rem 0 1rem
   .split { grid-template-columns: 1fr 1fr; }
   .facts-grid { grid-template-columns: repeat(3, 1fr); }
 }
-
-
-/* Single-column rounded contact form inspired by modern centered form patterns */
-.interest-form--single {
-  width: 100%;
-}
-.interest-form--single label,
-.interest-form--single legend {
-  margin-top: 0;
-}
-.interest-form--single input,
-.interest-form--single select {
-  border-radius: 999px;
-  padding: .85rem 1rem;
-  border: 1px solid #cbd5e1;
-  background: #fff;
-  transition: border-color .2s ease, box-shadow .2s ease;
-}
-.interest-form--single input:focus,
-.interest-form--single select:focus {
-  outline: none;
-  border-color: #60a5fa;
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, .15);
-}
-.interest-form--single fieldset {
-  border-radius: 1rem;
-  padding: .85rem;
-  background: #f8fafc;
-}
-.checks-stack {
-  display: grid;
-  gap: .65rem;
-}
-.check-pill {
-  display: flex;
-  align-items: center;
-  gap: .6rem;
-  width: 100%;
-  border: 1px solid #cbd5e1;
-  border-radius: 999px;
-  padding: .65rem .9rem;
-  background: #fff;
-}
-.check-pill input {
-  accent-color: #1d4ed8;
-}
-.interest-form--single .btn {
-  margin-top: .3rem;
-  border-radius: 999px;
-}
-
-.form-note { margin: 0 0 .7rem; color: var(--muted); font-size: .95rem; }
