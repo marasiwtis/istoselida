@@ -56,7 +56,7 @@
 
         <article class="card form-card">
           <h2>Φόρμα εκδήλωσης ενδιαφέροντος</h2>
-          <form class="interest-form interest-form--single" action="#" method="post">
+          <form class="interest-form" action="#" method="post">
             <label for="fullname">Ονοματεπώνυμο</label>
             <input id="fullname" name="fullname" type="text" required />
 
@@ -74,11 +74,9 @@
 
             <fieldset>
               <legend>Χρήσεις φυσικού αερίου</legend>
-              <div class="checks-stack">
-                <label class="check-pill"><input type="checkbox" name="uses" value="ζεστό νερό χρήσης" /> Ζεστό νερό χρήσης</label>
-                <label class="check-pill"><input type="checkbox" name="uses" value="μαγειρική εστία" /> Μαγειρική εστία</label>
-                <label class="check-pill"><input type="checkbox" name="uses" value="θέρμανση" /> Θέρμανση</label>
-              </div>
+              <label class="check"><input type="checkbox" name="uses" value="ζεστό νερό χρήσης" /> Ζεστό νερό χρήσης</label>
+              <label class="check"><input type="checkbox" name="uses" value="μαγειρική εστία" /> Μαγειρική εστία</label>
+              <label class="check"><input type="checkbox" name="uses" value="θέρμανση" /> Θέρμανση</label>
             </fieldset>
 
             <button class="btn btn-primary" type="submit">Αποστολή ενδιαφέροντος</button>
