@@ -54,95 +54,48 @@
           </ul>
         </article>
 
-        <article class="card form-card">
-          <h2>Φόρμα εκδήλωσης ενδιαφέροντος</h2>
-          <p class="form-note">Συμπληρώστε τα στοιχεία σας και θα επικοινωνήσουμε μαζί σας το συντομότερο.</p>
-          <form id="gas-interest-form" class="interest-form interest-form--single" action="https://formspree.io/f/mdabrarn" method="POST" novalidate>
-            
-            <input type="hidden" name="_subject" value="Νέα εκδήλωση ενδιαφέροντος - Μελέτη Φυσικού Αερίου" />
-            <input type="hidden" name="_language" value="el" />
-            <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" />
-            <label for="fullname">Ονοματεπώνυμο</label>
-            <input id="fullname" name="fullname" type="text" required />
+       <form class="interest-form" action="https://formspree.io/f/mdabrarn" method="post">
+  <label for="fullname">Ονοματεπώνυμο</label>
+  <input id="fullname" name="fullname" type="text" required />
 
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required />
+  <label for="phone">Τηλέφωνο</label>
+  <input id="phone" name="phone" type="tel" required />
 
-            <label for="phone">Τηλέφωνο</label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel" />
+  <label for="area">Περιοχή</label>
+  <input id="area" name="area" type="text" />
 
-            <label for="area">Περιοχή</label>
-            <input id="area" name="area" type="text" required />
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email" required />
 
-            <label for="housing-type">Τύπος κατοικίας</label>
-            <select id="housing-type" name="housing_type" required>
-              <option value="" selected disabled>Επιλέξτε τύπο κατοικίας</option>
-              <option value="διαμέρισμα">Διαμέρισμα</option>
-              <option value="μονοκατοικία">Μονοκατοικία</option>
-              <option value="μεζονέτα">Μεζονέτα</option>
-              <option value="επαγγελματικός χώρος">Επαγγελματικός χώρος</option>
-            </select>
+  <label for="housing-type">Τύπος κατοικίας</label>
+  <select id="housing-type" name="housing_type" required>
+    <option value="" selected disabled>Επιλέξτε τύπο κατοικίας</option>
+    <option value="διαμέρισμα">Διαμέρισμα</option>
+    <option value="μονοκατοικία">Μονοκατοικία</option>
+    <option value="μεζονέτα">Μεζονέτα</option>
+    <option value="κεντρική θέρμανση">Κεντρική Θέρμανση</option>
+    <option value="επαγγελματικός χώρος">Επαγγελματικός χώρος</option>
+    <option value="άλλο">Άλλο</option>
+  </select>
 
-            <fieldset>
-              <legend>Χρήσεις φυσικού αερίου</legend>
-              <div class="checks-stack">
-                <label class="check-pill"><input type="checkbox" name="uses[]" value="ζεστό νερό χρήσης" /> Ζεστό νερό χρήσης</label>
-                <label class="check-pill"><input type="checkbox" name="uses[]" value="μαγειρική εστία" /> Μαγειρική εστία</label>
-                <label class="check-pill"><input type="checkbox" name="uses[]" value="θέρμανση" /> Θέρμανση</label>
-              </div>
-            </fieldset>
+  <fieldset>
+    <legend>Χρήσεις φυσικού αερίου</legend>
+    <label class="check">
+      <input type="checkbox" name="uses[]" value="ζεστό νερό χρήσης" />
+      Ζεστό νερό χρήσης
+    </label>
+    <label class="check">
+      <input type="checkbox" name="uses[]" value="μαγειρική εστία" />
+      Μαγειρική εστία
+    </label>
+    <label class="check">
+      <input type="checkbox" name="uses[]" value="θέρμανση" />
+      Θέρμανση
+    </label>
+  </fieldset>
 
-            <p id="form-status" class="form-status" aria-live="polite"></p>
-            <button id="submit-btn" class="btn btn-primary" type="submit">Αποστολή ενδιαφέροντος</button>
-          </form>
-        </article>
-      </div>
-    </section>
-  </main>
+  <label for="notes">Σημειώσεις</label>
+  <textarea id="notes" name="notes" rows="4"></textarea>
 
-  <footer class="site-footer">
-    <div class="container footer-wrap">
-      <p>© <span id="year"></span> GZ Engineering · Γρηγόρης Ζολώτας</p>
-      <a href="epikoinonia.html">Επικοινωνία</a>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const form = document.getElementById('gas-interest-form');
-    const status = document.getElementById('form-status');
-    const submitBtn = document.getElementById('submit-btn');
-
-    form?.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      status.textContent = 'Γίνεται αποστολή...';
-      status.className = 'form-status is-loading';
-      submitBtn.disabled = true;
-
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-          window.location.href = 'efxaristo.html';
-          return;
-        }
-
-        const data = await response.json().catch(() => ({}));
-        const message = data?.errors?.[0]?.message || 'Η αποστολή απέτυχε. Ελέγξτε τα πεδία και δοκιμάστε ξανά.';
-        status.textContent = message;
-        status.className = 'form-status is-error';
-      } catch (error) {
-        status.textContent = 'Πρόβλημα σύνδεσης. Δοκιμάστε ξανά σε λίγο.';
-        status.className = 'form-status is-error';
-      } finally {
-        submitBtn.disabled = false;
-      }
-    });
-  </script>
-</body>
-</html>
+  <button class="btn btn-primary" type="submit">Αποστολή ενδιαφέροντος</button>
+</form>
