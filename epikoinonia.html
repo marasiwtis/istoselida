@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Επικοινωνία | GZ Engineering</title>
+  <meta name="description" content="Επικοινωνήστε με τον Γρηγόρη Ζολώτα για μελέτη φυσικού αερίου και υπηρεσίες μηχανολόγου μηχανικού στην Ορεστιάδα." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">GZ Engineering</a>
+      <nav aria-label="Κύρια πλοήγηση">
+        <ul class="nav-list">
+          <li><a href="index.html">Αρχική</a></li>
+          <li><a href="fysiko-aerio.html">Φυσικό Αέριο</a></li>
+          <li><a href="sxediasi.html">Σχεδίαση</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a class="active" href="epikoinonia.html">Επικοινωνία</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-compact">
+      <div class="container">
+        <p class="eyebrow">Επικοινωνία</p>
+        <h1>Ας συζητήσουμε το έργο σας</h1>
+        <p class="lead">Για μελέτη φυσικού αερίου, βιομηχανική σχεδίαση ή τεχνική συμβουλή, επικοινωνήστε απευθείας μαζί μου.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2 contact-grid">
+        <article class="card">
+          <h2>Στοιχεία επικοινωνίας</h2>
+          <ul class="contact-list">
+            <li><strong>Υπεύθυνος:</strong> Γρηγόρης Ζολώτας, Μηχανολόγος Μηχανικός MSc</li>
+            <li><strong>Τηλέφωνο:</strong> <a href="tel:+306900000000">+30 690 000 0000</a></li>
+            <li><strong>Email:</strong> <a href="mailto:gregory.zol.123@hotmail.com">gregory.zol.123@hotmail.com</a></li>
+            <li><strong>Περιοχή εξυπηρέτησης:</strong> Ορεστιάδα και ευρύτερη περιοχή Έβρου</li>
+            <li><strong>Ώρες επικοινωνίας:</strong> Δευ–Παρ 09:00–18:00</li>
+          </ul>
+          <p class="form-note">Συνήθη στοιχεία που αναμένει ο επισκέπτης σε σελίδα επικοινωνίας: τηλέφωνο, email, περιοχή/διεύθυνση, ώρες λειτουργίας και σύντομη φόρμα ενδιαφέροντος.</p>
+        </article>
+
+        <article class="card form-card">
+          <h2>Στείλτε μήνυμα</h2>
+          <form id="contact-form" class="interest-form interest-form--single" action="https://formspree.io/f/mdabrarn" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="Νέο μήνυμα από σελίδα Επικοινωνίας" />
+            <input type="hidden" name="_language" value="el" />
+            <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" />
+
+            <label for="c-fullname">Ονοματεπώνυμο</label>
+            <input id="c-fullname" name="fullname" type="text" required />
+
+            <label for="c-email">Email</label>
+            <input id="c-email" name="email" type="email" autocomplete="email" required />
+
+            <label for="c-phone">Τηλέφωνο</label>
+            <input id="c-phone" name="phone" type="tel" autocomplete="tel" />
+
+            <label for="c-topic">Θέμα</label>
+            <select id="c-topic" name="topic" required>
+              <option value="" selected disabled>Επιλέξτε θέμα</option>
+              <option value="μελέτη φυσικού αερίου">Μελέτη φυσικού αερίου</option>
+              <option value="βιομηχανική σχεδίαση">Βιομηχανική σχεδίαση</option>
+              <option value="γενική ερώτηση">Γενική ερώτηση</option>
+            </select>
+
+            <label for="c-message">Μήνυμα</label>
+            <textarea id="c-message" name="message" rows="5" required></textarea>
+
+            <p id="contact-status" class="form-status" aria-live="polite"></p>
+            <button id="contact-submit" class="btn btn-primary" type="submit">Αποστολή μηνύματος</button>
+          </form>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© <span id="year"></span> GZ Engineering · Γρηγόρης Ζολώτας</p>
+      <a href="fysiko-aerio.html">Μελέτες Φυσικού Αερίου</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('contact-status');
+    const submit = document.getElementById('contact-submit');
+
+    form?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      status.textContent = 'Γίνεται αποστολή...';
+      status.className = 'form-status is-loading';
+      submit.disabled = true;
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          window.location.href = 'efxaristo.html';
+          return;
+        }
+
+        const data = await response.json().catch(() => ({}));
+        status.textContent = data?.errors?.[0]?.message || 'Η αποστολή απέτυχε. Ελέγξτε τα πεδία και δοκιμάστε ξανά.';
+        status.className = 'form-status is-error';
+      } catch (error) {
+        status.textContent = 'Πρόβλημα σύνδεσης. Δοκιμάστε ξανά σε λίγο.';
+        status.className = 'form-status is-error';
+      } finally {
+        submit.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
