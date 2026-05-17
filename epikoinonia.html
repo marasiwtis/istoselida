@@ -73,6 +73,11 @@
             <label for="c-message">Μήνυμα</label>
             <textarea id="c-message" name="message" rows="5" required></textarea>
 
+            <label class="check consent-check" for="c-consent-gas">
+              <input id="c-consent-gas" type="checkbox" name="consent_gas_contact" value="yes" required />
+              Αποδέχομαι να χρησιμοποιηθούν τα στοιχεία μου για να επικοινωνήσετε μαζί μου σχετικά με μελέτη φυσικού αερίου.
+            </label>
+
             <p id="contact-status" class="form-status" aria-live="polite"></p>
             <button id="contact-submit" class="btn btn-primary" type="submit">Αποστολή μηνύματος</button>
           </form>
@@ -97,6 +102,13 @@
 
     form?.addEventListener('submit', async (event) => {
       event.preventDefault();
+
+      if (!form.reportValidity()) {
+        status.textContent = 'Παρακαλώ συμπληρώστε όλα τα υποχρεωτικά πεδία.';
+        status.className = 'form-status is-error';
+        return;
+      }
+
       status.textContent = 'Γίνεται αποστολή...';
       status.className = 'form-status is-loading';
       submit.disabled = true;
