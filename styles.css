@@ -84,3 +84,16 @@ h1 { font-size: clamp(2rem, 6vw, 3.6rem); line-height: 1.1; margin: .5rem 0 1rem
   .split { grid-template-columns: 1fr 1fr; }
   .facts-grid { grid-template-columns: repeat(3, 1fr); }
 }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand-logo {
+  display: block;
+  height: 44px;
+  width: auto;
+  max-width: min(180px, 36vw);
+  object-fit: contain;
+}
