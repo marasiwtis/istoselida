@@ -10,7 +10,9 @@
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="index.html">GZ Engineering</a>
+      <a class="brand" href="index.html" aria-label="GZ Engineering - Αρχική">
+        <img class="brand-logo" src="assets/logo.png" alt="GZ Engineering" />
+      </a>
       <nav aria-label="Κύρια πλοήγηση">
         <ul class="nav-list">
           <li><a href="index.html">Αρχική</a></li>
@@ -96,6 +98,11 @@
 
   <label for="notes">Σημειώσεις</label>
   <textarea id="notes" name="notes" rows="4"></textarea>
+
+  <label class="check consent-check">
+    <input id="consent-gas" type="checkbox" name="consent_gas_contact" value="yes" required />
+    Αποδέχομαι να χρησιμοποιηθούν τα στοιχεία μου για να επικοινωνήσετε μαζί μου σχετικά με μελέτη φυσικού αερίου.
+  </label>
 
   <button class="btn btn-primary" type="submit">Αποστολή ενδιαφέροντος</button>
 </form>
