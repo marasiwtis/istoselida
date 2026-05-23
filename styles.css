@@ -78,7 +78,8 @@ h1 { font-size: clamp(2rem, 6vw, 3.6rem); line-height: 1.1; margin: .5rem 0 1rem
   width: 100%; padding: .7rem .75rem; border-radius: .65rem; border: 1px solid var(--line); font: inherit;
 }
 .interest-form fieldset { border: 1px solid var(--line); border-radius: .75rem; padding: .75rem; display: grid; gap: .5rem; }
-.check { display: flex; align-items: center; gap: .5rem; font-weight: 500; }
+.check { display: flex; align-items: flex-start; gap: .5rem; font-weight: 500; }
+.check input[type="checkbox"] { width: auto; flex: 0 0 auto; margin: .35rem 0 0; }
 
 @media (min-width: 860px) {
   .split { grid-template-columns: 1fr 1fr; }
