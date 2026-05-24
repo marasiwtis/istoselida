@@ -14,3 +14,12 @@
 https://unsplash.com/photos/a-pressure-gauge-attached-to-a-pipe-in-a-room-SLSly1r8wiM
 
 Άδεια χρήσης: Unsplash License, δωρεάν χρήση για εμπορικούς και μη εμπορικούς σκοπούς χωρίς υποχρεωτική αναφορά δημιουργού.
+
+## Background αρχικής σελίδας
+
+Η αρχική σελίδα `index.html` χρησιμοποιεί ως hero background απευθείας URL από το Unsplash CDN μέσα στο `styles.css`.
+
+Πηγή φωτογραφίας: Unsplash, Vooglam, "hands measuring watch part with calipers and blueprints":
+https://unsplash.com/photos/hands-measuring-watch-part-with-calipers-and-blueprints-07mSSc4bdZ8
+
+Άδεια χρήσης: Unsplash License, δωρεάν χρήση για εμπορικούς και μη εμπορικούς σκοπούς χωρίς υποχρεωτική αναφορά δημιουργού.
