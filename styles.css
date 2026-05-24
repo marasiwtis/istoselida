@@ -327,6 +327,47 @@ h1 { font-size: clamp(2rem, 6vw, 3.6rem); line-height: 1.1; margin: .5rem 0 1rem
   min-height: 60px;
 }
 
+.gas-interest-form .gas-use-options {
+  gap: .45rem;
+  margin: .1rem 0 .25rem;
+  padding: .55rem .65rem .65rem;
+  border-color: rgba(172, 208, 238, .3);
+  border-radius: .4rem;
+  background: rgba(255, 255, 255, .06);
+}
+
+.gas-interest-form .gas-use-options legend {
+  padding: 0 .2rem;
+  color: rgba(255, 255, 255, .92);
+  font-size: .82rem;
+}
+
+.gas-use-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .35rem;
+}
+
+.gas-use-grid .check {
+  align-items: center;
+  min-height: 32px;
+  padding: .35rem .48rem;
+  border: 1px solid rgba(172, 208, 238, .22);
+  border-radius: .35rem;
+  background: rgba(255, 255, 255, .06);
+  color: rgba(255, 255, 255, .9);
+  font-size: .8rem;
+  line-height: 1.25;
+}
+
+.gas-use-grid .check input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  min-height: 0;
+  margin: 0;
+  accent-color: #1f6fbf;
+}
+
 .gas-interest-form .consent-check {
   align-items: flex-start;
   margin: .2rem 0 .5rem;
