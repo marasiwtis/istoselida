@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /homepage-mockup.html
+Disallow: /server.log
+Disallow: /server.err
+Disallow: /*preview*.png
+Disallow: /*mockup*.png
+Allow: /
+
+Sitemap: https://gzengineering.gr/sitemap.xml
