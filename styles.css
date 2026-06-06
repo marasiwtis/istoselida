@@ -459,7 +459,7 @@ h1 { font-size: clamp(2rem, 6vw, 3.6rem); line-height: 1.1; margin: .5rem 0 1rem
   color: #ffffff;
   background:
     linear-gradient(90deg, rgba(5, 20, 38, .90) 0%, rgba(7, 27, 50, .72) 49%, rgba(6, 24, 45, .88) 100%),
-    url("https://images.unsplash.com/photo-1710751188315-4f220a614bcd?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=85&w=2400") center / cover no-repeat;
+    url("assets/fysiko-aerio-background.jpg") center / cover no-repeat;
   overflow: hidden;
 }
 
@@ -532,7 +532,7 @@ h1 { font-size: clamp(2rem, 6vw, 3.6rem); line-height: 1.1; margin: .5rem 0 1rem
 }
 
 .process-item {
-  display: grid;
+  display: inline-grid;
   grid-template-columns: auto 1fr;
   gap: .9rem;
   align-items: center;
@@ -797,7 +797,7 @@ h1 { font-size: clamp(2rem, 6vw, 3.6rem); line-height: 1.1; margin: .5rem 0 1rem
   padding: clamp(2.4rem, 4vw, 3.8rem) 0;
   background:
     linear-gradient(90deg, rgba(5, 20, 38, .94), rgba(7, 27, 50, .88)),
-    url("https://images.unsplash.com/photo-1710751188315-4f220a614bcd?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800") center / cover no-repeat;
+    url("assets/fysiko-aerio-background.jpg") center / cover no-repeat;
 }
 
 .gas-form-section .gas-interest-form {
@@ -882,7 +882,7 @@ h1 { font-size: clamp(2rem, 6vw, 3.6rem); line-height: 1.1; margin: .5rem 0 1rem
 }
 
 .trust-strip > div {
-  display: grid;
+  display: inline-grid;
   grid-template-columns: auto 1fr;
   column-gap: .8rem;
   align-items: center;
@@ -995,7 +995,7 @@ h1 { font-size: clamp(2rem, 6vw, 3.6rem); line-height: 1.1; margin: .5rem 0 1rem
   }
 
   .gas-page .container {
-    width: min(calc(100vw - 1.4rem), 1360px);
+    width: min(100vw - 1.4rem), 1360px);
   }
 
   .home-page .container {
