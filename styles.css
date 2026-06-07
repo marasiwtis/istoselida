@@ -2,13 +2,29 @@
 
 /* Natural gas page background override */
 .gas-hero {
-  background:
-    linear-gradient(90deg, rgba(5, 20, 38, .90) 0%, rgba(7, 27, 50, .72) 49%, rgba(6, 24, 45, .88) 100%),
-    url("assets/fysiko-aerio-background.jpg") center / cover no-repeat;
+  background-color: #06182d;
+  background-image:
+    linear-gradient(90deg, rgba(5, 20, 38, .90) 0%, rgba(7, 27, 50, .66) 52%, rgba(6, 24, 45, .28) 100%),
+    url("assets/fysiko-aerio-background.jpg");
+  background-position: center, right center;
+  background-size: cover, auto 100%;
+  background-repeat: no-repeat;
 }
 
 .gas-form-section {
-  background:
-    linear-gradient(90deg, rgba(5, 20, 38, .94), rgba(7, 27, 50, .88)),
-    url("assets/fysiko-aerio-background.jpg") center / cover no-repeat;
+  background-color: #06182d;
+  background-image:
+    linear-gradient(90deg, rgba(5, 20, 38, .88), rgba(7, 27, 50, .68)),
+    url("assets/fysiko-aerio-background.jpg");
+  background-position: center, right center;
+  background-size: cover, auto 100%;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 720px) {
+  .gas-hero,
+  .gas-form-section {
+    background-position: center, center top;
+    background-size: cover, 100% auto;
+  }
 }
