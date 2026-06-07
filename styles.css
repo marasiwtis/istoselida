@@ -4,9 +4,9 @@
 .gas-hero {
   background-color: #06182d;
   background-image:
-    linear-gradient(90deg, rgba(5, 20, 38, .92) 0%, rgba(7, 27, 50, .78) 46%, rgba(6, 24, 45, .48) 100%),
+    linear-gradient(90deg, rgba(5, 20, 38, .92) 0%, rgba(9, 31, 55, .75) 50%, rgba(5, 20, 38, .88) 100%),
     url("assets/fysiko-aerio-background.jpg");
-  background-position: center, center 45%;
+  background-position: center, center 34%;
   background-size: cover, cover;
   background-repeat: no-repeat;
 }
@@ -14,16 +14,19 @@
 .gas-form-section {
   background-color: #06182d;
   background-image:
-    linear-gradient(90deg, rgba(5, 20, 38, .90), rgba(7, 27, 50, .72)),
+    linear-gradient(90deg, rgba(5, 20, 38, .94), rgba(9, 31, 55, .84)),
     url("assets/fysiko-aerio-background.jpg");
-  background-position: center, center 48%;
+  background-position: center, center 40%;
   background-size: cover, cover;
   background-repeat: no-repeat;
 }
 
 @media (max-width: 720px) {
-  .gas-hero,
+  .gas-hero {
+    background-position: center, 64% 36%;
+  }
+
   .gas-form-section {
-    background-position: center, 58% 42%;
+    background-position: center, 64% 40%;
   }
 }
